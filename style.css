@@ -1,0 +1,531 @@
+
+/* ===============================
+   Old Town Restaurant
+   Vintage Restaurant Menu
+================================ */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+
+/* ===============================
+   General
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f4efe4;
+    color: #3b2a20;
+    font-family: "Playfair Display", serif;
+}
+
+
+/* ===============================
+   Header
+================================ */
+
+.header {
+    min-height: 280px;
+    padding: 45px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+
+    background:
+        linear-gradient(rgba(244, 239, 228, 0.92), rgba(244, 239, 228, 0.92)),
+        url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4")
+        center / cover;
+}
+
+.logo {
+    max-width: 600px;
+}
+
+.established {
+    font-size: 13px;
+    letter-spacing: 4px;
+    margin-bottom: 8px;
+}
+
+.logo h1 {
+    font-family: "DM Serif Display", serif;
+    font-size: 58px;
+    letter-spacing: 6px;
+    margin-bottom: 8px;
+}
+
+.tagline {
+    font-size: 17px;
+    font-style: italic;
+}
+
+.language-btn {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+
+    padding: 9px 16px;
+
+    color: #3b2a20;
+    border: 1px solid #8d765f;
+    text-decoration: none;
+
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.language-btn:hover {
+    background: #3b2a20;
+    color: #f4efe4;
+}
+
+
+/* ===============================
+   Navbar
+================================ */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+
+    padding: 15px 20px;
+
+    background: #3b2a20;
+    border-top: 1px solid #8d765f;
+    border-bottom: 1px solid #8d765f;
+}
+
+.navbar a {
+    color: #f4efe4;
+    text-decoration: none;
+
+    font-size: 15px;
+    position: relative;
+
+    transition: 0.3s;
+}
+
+.navbar a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+
+    width: 0;
+    height: 1px;
+
+    background: #c5a46d;
+
+    transition: 0.3s;
+}
+
+.navbar a:hover::after,
+.navbar a.active::after {
+    width: 100%;
+}
+
+
+/* ===============================
+   Menu
+================================ */
+
+.menu {
+    max-width: 1100px;
+    margin: auto;
+    padding: 45px 25px;
+}
+
+.menu-section {
+    margin-bottom: 70px;
+    scroll-margin-top: 80px;
+}
+
+
+/* ===============================
+   Section Title
+================================ */
+
+.section-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+
+    margin-bottom: 30px;
+}
+
+.section-title h2 {
+    font-family: "DM Serif Display", serif;
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.section-title span {
+    color: #9b7a4b;
+    font-size: 16px;
+}
+
+
+/* ===============================
+   Products
+================================ */
+
+.products {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+/* ===============================
+   Product Card
+================================ */
+
+.product-card {
+    background: #faf7ef;
+
+    border: 1px solid #cdbfa8;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+    cursor: pointer;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 12px 25px rgba(59, 42, 32, 0.12);
+}
+
+.product-card.selected {
+    transform: translateY(-5px);
+}
+
+
+/* ===============================
+   Product Image
+================================ */
+
+.product-card img {
+    width: 100%;
+    height: 210px;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* ===============================
+   Product Info
+================================ */
+
+.product-info {
+    padding: 18px;
+    text-align: center;
+}
+
+.product-info h3 {
+    font-family: "DM Serif Display", serif;
+
+    font-size: 21px;
+    font-weight: 400;
+
+    margin-bottom: 8px;
+}
+
+.product-info p {
+    color: #6d5a4b;
+
+    font-size: 14px;
+    line-height: 1.6;
+
+    margin-bottom: 12px;
+}
+
+.price {
+    display: inline-block;
+
+    color: #8a683c;
+
+    font-size: 16px;
+    font-weight: 600;
+}
+
+
+/* ===============================
+   Decorative Section Line
+================================ */
+
+.menu-section::after {
+    content: "";
+
+    display: block;
+
+    width: 80px;
+    height: 1px;
+
+    background: #b9a486;
+
+    margin: 45px auto 0;
+}
+
+
+/* ===============================
+   Footer
+================================ */
+
+.contact {
+    padding: 55px 20px;
+
+    text-align: center;
+
+    background: #3b2a20;
+    color: #f4efe4;
+}
+
+.contact h2 {
+    font-family: "DM Serif Display", serif;
+
+    font-size: 30px;
+    font-weight: 400;
+
+    margin-bottom: 10px;
+}
+
+.contact > p {
+    color: #d8cdbc;
+
+    font-size: 15px;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 25px;
+
+    margin: 25px 0;
+}
+
+.contact-links a {
+    color: #f4efe4;
+    text-decoration: none;
+
+    font-size: 14px;
+
+    border-bottom: 1px solid #9b7a4b;
+
+    padding-bottom: 3px;
+
+    transition: 0.3s;
+}
+
+.contact-links a:hover {
+    color: #c5a46d;
+}
+
+.copyright {
+    margin-top: 30px;
+
+    font-size: 12px !important;
+
+    color: #a99a88 !important;
+}
+
+
+/* ===============================
+   Tablet
+================================ */
+
+@media (max-width: 900px) {
+
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .navbar {
+        gap: 22px;
+    }
+
+}
+
+
+/* ===============================
+   Mobile
+================================ */
+
+@media (max-width: 600px) {
+
+    .header {
+        min-height: 240px;
+        padding: 35px 15px;
+    }
+
+    .logo h1 {
+        font-size: 42px;
+        letter-spacing: 4px;
+    }
+
+    .established {
+        font-size: 11px;
+        letter-spacing: 3px;
+    }
+
+    .tagline {
+        font-size: 14px;
+    }
+
+    .language-btn {
+        top: 15px;
+        right: 15px;
+
+        padding: 7px 11px;
+        font-size: 12px;
+    }
+
+
+    /* Mobile Navbar */
+
+    .navbar {
+        gap: 16px;
+
+        padding: 13px 10px;
+
+        overflow-x: auto;
+        justify-content: flex-start;
+
+        white-space: nowrap;
+    }
+
+    .navbar a {
+        font-size: 13px;
+        flex-shrink: 0;
+    }
+
+
+    /* Menu */
+
+    .menu {
+        padding: 35px 12px;
+    }
+
+    .menu-section {
+        margin-bottom: 55px;
+    }
+
+
+    /* Section title */
+
+    .section-title {
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .section-title h2 {
+        font-size: 24px;
+    }
+
+
+    /* TWO PRODUCTS PER ROW */
+
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+
+    /* Product */
+
+    .product-card img {
+        height: 125px;
+    }
+
+    .product-info {
+        padding: 12px 8px;
+    }
+
+    .product-info h3 {
+        font-size: 16px;
+        line-height: 1.3;
+    }
+
+    .product-info p {
+        font-size: 11px;
+        line-height: 1.45;
+
+        margin-bottom: 8px;
+    }
+
+    .price {
+        font-size: 13px;
+    }
+
+
+    /* Footer */
+
+    .contact {
+        padding: 45px 15px;
+    }
+
+    .contact h2 {
+        font-size: 26px;
+    }
+
+    .contact-links {
+        gap: 18px;
+    }
+
+    .contact-links a {
+        font-size: 13px;
+    }
+
+}
+
+
+/* ===============================
+   Very Small Phones
+================================ */
+
+@media (max-width: 380px) {
+
+    .products {
+        gap: 8px;
+    }
+
+    .product-card img {
+        height: 110px;
+    }
+
+    .product-info h3 {
+        font-size: 14px;
+    }
+
+    .product-info p {
+        font-size: 10px;
+    }
+
+}
